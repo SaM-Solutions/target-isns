@@ -41,7 +41,7 @@ int conffile_read(void)
 
 	memset(&config, sizeof(config), 0);
 	config.log_level = LOG_INFO;
-  config.isns_port = 3205; //default isns windows port
+	config.isns_port = 3205; //default isns windows port
 
 	if ((file = fopen(CONFFILE, "r")) == NULL) {
 		log_print(LOG_ERR, "Could not read " CONFFILE);

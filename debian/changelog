@@ -1,3 +1,9 @@
+target-isns (0.0.1-4) unstable; urgency=low
+
+  * Fixed indentation
+
+ -- a.tulia <foss@sam-solutions.net>  Tue, 25 Feb 2014 15:15:19 +0100
+
 target-isns (0.0.1-3) unstable; urgency=low
 
   * Added isns_port param to config file
