@@ -159,7 +159,7 @@ int main(int argc, char *argv[])
 	log_init(PROGNAME, daemon, config.log_level);
 	log_print(LOG_INFO, PROGNAME " version " VERSION " has been started");
 
-	isns_init(config.isns_server);
+	isns_init(config.isns_server, config.isns_port);
 
 	if ((epoll_fd = epoll_create(1)) == -1) {
 		log_print(LOG_ERR, "failed to create epoll instance");

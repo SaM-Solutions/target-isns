@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #define PIDFILE		"/run/target-isns.pid"
 #define CONFFILE	"/etc/target-isns.conf"
@@ -40,6 +41,7 @@ int conffile_read(void)
 
 	memset(&config, sizeof(config), 0);
 	config.log_level = LOG_INFO;
+  config.isns_port = 3205; //default isns windows port
 
 	if ((file = fopen(CONFFILE, "r")) == NULL) {
 		log_print(LOG_ERR, "Could not read " CONFFILE);
@@ -89,7 +91,9 @@ int conffile_read(void)
 			const size_t sz = sizeof(config.isns_server);
 			strncpy(config.isns_server, value, sz);
 			config.isns_server[sz - 1] = '\0';
-		} else if (streq(key, "log_level")) {
+		} else if (streq(key, "isns_port")) {
+      			config.isns_port = atoi(value);
+    		} else if (streq(key, "log_level")) {
 			if (streq(value, "info"))
 				config.log_level = LOG_INFO;
 			else if (streq(value, "debug"))

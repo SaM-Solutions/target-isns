@@ -920,15 +920,16 @@ out:
 	return err;
 }
 
-int isns_init(char *addr)
+int isns_init(char *addr, uint16_t isns_port)
 {
 	int err;
 	char port[8];
 	struct addrinfo hints, *res;
 
 	log_print(LOG_INFO, "iSNS server is %s", addr);
+  	log_print(LOG_INFO, "iSNS server port is %d", isns_port);
 
-	snprintf(port, sizeof(port), "%d", ISNS_PORT);
+	snprintf(port, sizeof(port), "%d", isns_port);
 	memset(&hints, 0, sizeof(hints));
 	hints.ai_socktype = SOCK_STREAM;
 	err = getaddrinfo(addr, (char *) &port, &hints, &res);
