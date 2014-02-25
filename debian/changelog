@@ -1,3 +1,9 @@
+target-isns (0.0.1-2) unstable; urgency=low
+
+  * Updated init script settings
+
+ -- a.tulia <foss@sam-solutions.net>  Tue, 25 Feb 2014 10:11:39 +0100
+
 target-isns (0.0.1-1) unstable; urgency=low
 
   * Initial release
