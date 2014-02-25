@@ -1,3 +1,9 @@
+target-isns (0.0.1-5) unstable; urgency=low
+
+  * Added port reading through commad line args
+
+ -- a.tulia <foss@sam-solutions.net>  Tue, 25 Feb 2014 15:41:20 +0100
+
 target-isns (0.0.1-4) unstable; urgency=low
 
   * Fixed indentation
